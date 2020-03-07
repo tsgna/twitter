@@ -22,7 +22,7 @@ public class LoginServlet extends HttpServlet {
         if (login.equals(userName) && password.equals("password")) {
             final HttpSession session = req.getSession();
             session.setAttribute("user", userName);
-            resp.sendRedirect("/");
+            resp.sendRedirect(req.getContextPath() + "/");
         } else {
             writer.write("Niepoprawne dane logowania");
         }
