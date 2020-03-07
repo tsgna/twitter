@@ -5,6 +5,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -17,8 +18,11 @@ public class LoginServlet extends HttpServlet {
         final String password = req.getParameter("password");
 
         final PrintWriter writer = resp.getWriter();
-        if(login.equals("admin") && password.equals("password")){
-            writer.write("Dane logowania sa poprawne");
+        final String userName = "admin";
+        if (login.equals(userName) && password.equals("password")) {
+            final HttpSession session = req.getSession();
+            session.setAttribute("user", userName);
+            resp.sendRedirect("/");
         } else {
             writer.write("Niepoprawne dane logowania");
         }
