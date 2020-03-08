@@ -8,8 +8,9 @@ import pl.sda.twitter.persistance.entities.TbUser;
 
 import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
+import java.io.Serializable;
 
-public class UserDao {
+public class UserDao implements Serializable {
     public TbUser getUserByLogin(String login) throws IncorrectLoginOrPasswordException {
         try (final Session session = HibernateUtil
                 .getSESSION_FACTORY()

@@ -22,7 +22,7 @@ public class LoginServlet extends HttpServlet {
         final String password = req.getParameter("password");
         try {
             final TbUser user = userService.getUser(login, password);
-            resp.sendRedirect("index.jspp");
+            resp.sendRedirect("index.jsp");
         } catch (IncorrectLoginOrPasswordException e) {
             resp.setCharacterEncoding(StandardCharsets.UTF_8.name());
             resp.sendRedirect("login.jsp");
