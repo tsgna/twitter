@@ -12,8 +12,8 @@
 
 <main role="main">
     <form class="form-signin" action="login" method="post">
-        <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72"
-             height="72">
+        <img class="mb-4" src="https://i.pinimg.com/originals/17/a3/4e/17a34ea1c77687f10e7ca5dca6634996.jpg" alt="" width="100"
+             height="100">
         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
         <label for="inputLogin" class="sr-only">Login</label>
         <input type="text" id="inputLogin" name="login" class="form-control" placeholder="Login" required autofocus>

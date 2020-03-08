@@ -11,6 +11,15 @@
             <li class="nav-item active">
                 <a class="nav-link" href="${pageContext.request.contextPath}/index.jsp"/>Home<span class="sr-only">(current)</span></a>
             </li>
+
+<c:choose>
+    <c:when test="${sessionScope.user != null}">
+
+            <li class="nav-item">
+                <a class="nav-link" href="${pageContext.request.contextPath}/add-article.jsp"/>Add article</a>
+            </li>
+    </c:when>
+</c:choose>
             <li class="nav-item">
 
                 <c:choose>
