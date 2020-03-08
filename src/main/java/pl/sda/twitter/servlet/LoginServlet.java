@@ -35,14 +35,10 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute(messages, Collections.singletonList("Niepoprawne dane logowania. Spróbuj ponownie."));
             resp.sendRedirect("login.jsp");
         }
-//        final PrintWriter writer = resp.getWriter();
-//        final String userName = "admin";
-//        if (login.equals(userName) && password.equals("password")) {
-//            final HttpSession session = req.getSession();
-//            session.setAttribute("user", userName);
-//            resp.sendRedirect(req.getContextPath() + "/");
-//        } else {
-//            writer.write("Niepoprawne dane logowania");
-//        }
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req, resp);
     }
 }
